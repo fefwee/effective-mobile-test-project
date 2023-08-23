@@ -1,0 +1,18 @@
+<div class="container">
+  <table mat-table *ngFor="let item of dataSource" class="mat-elevation-z8" routerLink="/post-detail">
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef>{{ item.id }}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>{{ item.title }}</th>
+    </ng-container>
+
+    <ng-container matColumnDef="body">
+      <th mat-header-cell *matHeaderCellDef class="item_body">{{ item.body }}</th>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

@@ -1,0 +1,13 @@
+.container{
+    margin-top: 10px;
+}
+table{
+    margin-top: 2px;
+    width: 100%;
+}
+tr{
+    height: 100px;
+}
+.item_body{
+    width:60%;
+}

@@ -1,1 +1,32 @@
-<p>auth-pages works!</p>
+<div>
+  <div *ngIf="isLogin">
+    <p>successful registration, please enter your username and password</p>
+  </div>
+  <form class="form_container" [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Login</mat-label>
+      <input matInput placeholder="login" formControlName="login" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        placeholder="password"
+        type="password"
+        formControlName="password"
+      />
+    </mat-form-field>
+    <div>
+      <app-button
+        *ngIf="isLogin"
+        (btnClick)="getDataUser(form.value)"
+        title="SignIn"
+      ></app-button>
+      <app-button
+        *ngIf="!isLogin"
+        (btnClick)="getDataUser(form.value)"
+        title="Registration"
+      ></app-button>
+    </div>
+  </form>
+</div>
