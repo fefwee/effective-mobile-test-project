@@ -1,6 +1,6 @@
 <div>
   <div *ngIf="isLogin">
-    <p>successful registration, please enter your username and password</p>
+    <p class="message">successful registration, please enter your username and password</p>
   </div>
   <form class="form_container" [formGroup]="form">
     <mat-form-field>
@@ -16,7 +16,7 @@
         formControlName="password"
       />
     </mat-form-field>
-    <div>
+    <div class="btn_box">
       <app-button
         *ngIf="isLogin"
         (btnClick)="getDataUser(form.value)"
@@ -26,6 +26,7 @@
         *ngIf="!isLogin"
         (btnClick)="getDataUser(form.value)"
         title="Registration"
+        [isDisable]="!form.valid"
       ></app-button>
     </div>
   </form>

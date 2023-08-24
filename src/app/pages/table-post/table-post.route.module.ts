@@ -6,7 +6,7 @@ import { DetailPostComponent } from 'src/app/shared/components/detail-post/detai
 
 const routes: Routes = [
   { path: '', component:TablePostComponent},
-  {path:'post',component:DetailPostComponent}
+  {path:':id',component:DetailPostComponent}
 ];
 
 @NgModule({

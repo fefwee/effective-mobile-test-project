@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IPost } from 'src/app/models/IPost';
 import { PostService } from 'src/app/services/post.service';
 
+
+ 
 @Component({
   selector: 'app-table-post',
   templateUrl: './table-post.component.html',
@@ -10,14 +12,13 @@ import { PostService } from 'src/app/services/post.service';
 export class TablePostComponent implements OnInit{
 
   displayedColumns: string[] = ['number', 'title', 'body'];
-  dataSource!:IPost[]
+  public dataSource:IPost[] = []
 
   constructor (private service:PostService){}
 
   ngOnInit(): void {
-    this.service.getPost().subscribe((post:any)=>{
-      console.log(post);
-      this.dataSource = post
-    })
+    this.service.getPost().subscribe((post:IPost[]) => (this.dataSource = post))
   }
-}
+} 
+
+

@@ -1,5 +1,5 @@
-<div class="container">
-  <table mat-table *ngFor="let item of dataSource" class="mat-elevation-z8" routerLink="/post-detail">
+<div class="container" *ngIf="dataSource.length !== 0">
+  <table mat-table *ngFor="let item of dataSource" class="mat-elevation-z8" routerLink={{item.id}}>
     <ng-container matColumnDef="number">
       <th mat-header-cell *matHeaderCellDef>{{ item.id }}</th>
     </ng-container>

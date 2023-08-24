@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { authGuard} from './auth-guard';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       import('./pages/table-post/table-post.module').then(
         (c) => c.TablePostModule
       ),
+      canActivate:[authGuard]
   },
 ];
 

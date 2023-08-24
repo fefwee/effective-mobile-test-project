@@ -1,2 +1,2 @@
 <button (click)="goBack()">Back</button>
-<p>detail-post works!</p>
+<p *ngIf="detailPost">{{detailPost.body}}</p>

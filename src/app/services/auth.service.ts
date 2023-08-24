@@ -15,7 +15,6 @@ export class AuthService {
 
   loginUser({ login, password }: IUser) {
     const loginUser = localStorage.getItem('login');
-
     const passwordUser = localStorage.getItem('password');
     if (
       JSON.stringify(login) === loginUser &&
@@ -25,5 +24,15 @@ export class AuthService {
     } else {
       return alert('Incorrect password');
     }
+  }
+  isLoggedUser() {
+    const loginUser = localStorage.getItem('login');
+    const passwordUser = localStorage.getItem('password');
+   if(loginUser && passwordUser){
+    return true
+   }
+   else{
+    return false
+   }
   }
 }

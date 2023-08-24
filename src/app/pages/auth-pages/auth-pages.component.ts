@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IUser } from 'src/app/models/IUser';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -25,8 +25,14 @@ export class AuthPagesComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      login: new FormControl(''),
-      password: new FormControl(''),
+      login: new FormControl('',[
+        Validators.required,
+        Validators.minLength(3)
+      ]),
+      password: new FormControl('',[
+        Validators.required,
+        Validators.minLength(3)
+      ]),
     });
   }
 }
